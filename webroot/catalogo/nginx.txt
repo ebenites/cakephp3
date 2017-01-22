@@ -1,0 +1,64 @@
+### nginx
+sudo apt-get install nginx
+sudo nano /etc/nginx/sites-enabled/default
+sudo nano /etc/nginx/nginx.conf
+	server_name www.domain.com
+sudo service nginx reload
+
+### php5-fpm
+sudo apt-get install  php5-fpm
+sudo nano /etc/php5/fpm/php.ini
+	cgi.fix_pathinfo = 0;
+sudo nano /etc/php5/fpm/pool.d/www.conf
+sudo service php5-fpm reload
+
+sudo nano /etc/nginx/nginx.conf
+	location ~ \.php$ {
+	        # NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+	        fastcgi_pass unix:/var/run/php5-fpm.sock;
+	        fastcgi_index index.php;
+	        include fastcgi_params;
+	}
+sudo service nginx reload
+
+### mysql-server
+sudo apt-get install mysql-server php5-mysql
+cd  /usr/bin/
+sudo ./mysql_secure_installation
+sudo mysql -u root
+
+### composer.phar
+sudo apt-get install php5-cli
+sudo curl -sS https://getcomposer.org/installer | sudo php
+sudo cp composer.phar /usr/bin/composer
+composer
+
+### git
+sudo apt-get install git
+git config --global user.name "Erick Benites"
+git config --global user.email "erick.benites@gmail.com"
+# http://www.fernandoplaza.com/2012/09/chuleta-para-uso-basico-de-git.asp
+git
+
+### laravel app
+cd /var/www
+sudo git clone https://github.com/JuanDMeGon/RESTful-API.git RESTfulAPI
+sudo nano /etc/nginx/sites-enabled/default
+	root /var/www/RESTfulAPI/public;
+	try_files $uri $uri/ /index.php?$query_string;
+sudo service nginx reload
+sudo apt-get install php5-mcrypt
+sudo php5enmod mcrypt
+sudo service php5-fpm restart
+
+sudo composer install
+(Si existe un error: bootstrap/../vendor/autoload.php. Failed to open stream: No such file or directory. The "vendor" folder does not exist. -> En composer.json eliminar el contenido de "pre-update-cmd")
+
+sudo php artisan migrate:install
+sudo php artisan db:seed
+
+Test: http://tecsup.tk/api/v1.1/vehiculos
+
+(enable cors: nginx.conf -> add_header Acces-Control-Allow-Origin *;)
+
+

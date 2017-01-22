@@ -1,0 +1,41 @@
+
+Conection Manager
+
+Query Builder (Consultas Avanzadas)	Tarea:Buscador con Con manager vs query build
+
+Mejorar las validaciones
+
+Transacciones
+
+Internacionalizacion
+
+Exportar a excel (PHP Excel) con grafico (JPGraph)
+
+Creando y/o usando Plugins http://book.cakephp.org/3.0/en/plugins.html	http://plugins.cakephp.org/   http://plugins.cakephp.org/p/1911-bootstrap-ui
+
+REST http://book.cakephp.org/3.0/en/development/rest.html  	http://book.cakephp.org/3.0/en/development/routing.html#resource-routes
+
+Ajax-XMLHTTPRequest: formulario cliente (validar correo con ajax, dep, prov, distrito, etc)
+
+Themes http://book.cakephp.org/3.0/en/views/themes.html# 
+		http://www.sanisoft.com/blog/2014/07/21/themes-in-cakephp-3-howto/
+		http://www.cakephpexpert.com/blog/free-cakephp-templates
+
+
+
+Seguridad: lista de accesos (para el soporte de roles)
+		
+
+--- Completo -------------------------------------------------------------
+
+Paginacion
+Subida de archivos (http://book.cakephp.org/3.0/en/core-libraries/file-folder.html)
+Validar forms
+Seguridad Auth	http://book.cakephp.org/3.0/en/tutorials-and-examples/blog-auth-example/auth.html
+Envío de correo
+Sesisons (AsistenteController, con acciones: paso1(), paso(), paso3() y resumen()): 
+Ejercicio: desarrollar un CarritoController (úblico, no herede de AuthController) que guarde en sesiom los productos elegidos.
+- Scafolding	(NO SOPORTADO EN CAKEPHP3) http://book.cakephp.org/2.0/en/controllers/scaffolding.html
+  http://mundocakephp.blogspot.pe/2015/07/el-scaffolding-en-cakephp-3.html
+Bake (COde generation) http://book.cakephp.org/3.0/en/bake/usage.html
+
